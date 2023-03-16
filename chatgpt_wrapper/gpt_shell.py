@@ -352,7 +352,7 @@ class GPTShell():
 
     def _print_markdown(self, output):
         self.console.print(Markdown(output))
-        print("")
+        #print("")
 
     def _write_log(self, prompt, response):
         if self.logfile is not None:
@@ -795,7 +795,7 @@ class GPTShell():
                 print(chunk, end="")
                 sys.stdout.flush()
                 response += chunk
-            print("\n")
+            #print("\n")
         else:
             success, response, message = await self.backend.ask(line, title=title, model_customizations=model_customizations)
             if success:
@@ -1225,8 +1225,8 @@ class GPTShell():
                 print(f'Unknown command: {command}')
 
     async def cmdloop(self):
-        print("")
-        self._print_markdown("### %s" % self.intro)
+        #print("")
+        #self._print_markdown("### %s" % self.intro)
         while True:
             self.set_user_prompt()
             try:
@@ -1249,4 +1249,4 @@ class GPTShell():
                 self.output_response(exec_prompt_pre_result)
             else:
                 await self.run_command(command, argument)
-        print('GoodBye!')
+        #print('GoodBye!')
