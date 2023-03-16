@@ -351,7 +351,7 @@ class GPTShell():
         print("")
 
     def _print_markdown(self, output):
-        self.console.print(Markdown(output))
+        self.console.print(Markdown(output, code_theme='default'))
         #print("")
 
     def _write_log(self, prompt, response):
